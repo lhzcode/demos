@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Message Box</title>
+	<link rel="stylesheet" href="animate.css">
+  <link rel="stylesheet" href="messageBox.css">
+</head>
+<body>
+
+<button class='u-trigger' >show box</button>
+
+<script src='animate.js'></script>
+<script src='messageBox.js'></script>
+
+<script>
+var box = new box({
+  // 1. 内容配置
+  content: "错误信息在这里", //可传入节点和字符串
+  // 2. 动画设置
+  animation: {
+    enter: 'bounceIn',
+    leave: 'bounceOut'
+  },
+  // 3.close回调
+  onClose: function(){
+  console.log('close')
+  }
+})
+
+document.querySelector('.u-trigger').addEventListener('click', function(){
+  box.show(); 
+})
+
+</script>
+
+</body>
+</html>
